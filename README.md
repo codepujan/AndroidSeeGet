@@ -1,4 +1,4 @@
-#Using Git and Making Pull Requests
+# Using Git and Making Pull Requests
 
 1. Always keep `master` branch up to date. Do this by running `git pull --rebase origin master` on the `master` branch every day.
 
