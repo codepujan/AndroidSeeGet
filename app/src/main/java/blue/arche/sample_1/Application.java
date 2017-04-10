@@ -18,32 +18,23 @@ import com.craftar.ImageRecognition;
 import blue.arche.sample_1.catchoom.test.LaunchersActivity;
 import blue.arche.sample_1.catchoom.test.SplashScreenActivity;
 
-/**
- * Created by pujanpaudel on 11/26/16.
- */
-
 public class Application extends android.app.Application implements ImageRecognition.SetOnDeviceCollectionListener,
         CraftAROnDeviceCollectionManager.AddCollectionListener, CraftAROnDeviceCollectionManager.SyncCollectionListener {
 
-
-
-
-    private final static String TAG = "SplashScreenActivity";
+    private static final String TAG = "SplashScreenActivity";
 
     //Collection token of the collection you want to load.
     //Note that you can load several collections at once, but every search
     //request is performed only on ONE collection (the one that you have set through CraftAROnDeviceIR.setCollection()).
-    public final static String COLLECTION_TOKEN="70dd0e0d3846471d";
+    public static final String COLLECTION_TOKEN="70dd0e0d3846471d";
 
-    CraftAROnDeviceIR mCraftAROnDeviceIR;
-    CraftAROnDeviceCollectionManager mCollectionManager;
+    private CraftAROnDeviceIR mCraftAROnDeviceIR;
+    private CraftAROnDeviceCollectionManager mCollectionManager;
+    private ProgressDialog addCollectionDialog;
+    private ProgressDialog setCollectionDialog;
+    private ProgressDialog syncCollectionDialog;
 
-    ProgressDialog addCollectionDialog;
-    ProgressDialog setCollectionDialog;
-    ProgressDialog syncCollectionDialog;
-
-
-
+    private ModelsData mModelsData;
 
     //We created this class to initialize all the Application Related Activities
     //For now , we generated  the Craft AR thing
@@ -51,20 +42,17 @@ public class Application extends android.app.Application implements ImageRecogni
 
     // So , emulate the onCreate
 
-
-
-
-
     @Override
     public void onCreate() {
         super.onCreate();
 
         CraftARSDK.Instance().init(getApplicationContext());
 
-        ModelsData.setBrandMapping(getApplicationContext());
+        mModelsData = new ModelsData();
+        mModelsData.setBrandMapping(getApplicationContext());
 
 
-        ModelsData.populateItemsData(getApplicationContext());
+        mModelsData.populateItemsData(getApplicationContext());
         //Initialize the Collection Manager
         mCollectionManager = CraftAROnDeviceCollectionManager.Instance();
 
