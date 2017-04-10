@@ -34,7 +34,7 @@
             android:name=".SurfaceViewActivity"
             android:label="@string/title_activity_surface_view"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".StoreActivity"
             android:label="@string/title_activity_store"
@@ -49,8 +49,6 @@
         <activity
             android:name=".catchoom.test.RecognitionFinderActivity"
             android:screenOrientation="portrait">
-
-
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -96,9 +94,6 @@
             android:label="@string/title_activity_pinch_example"
             android:theme="@style/AppTheme.NoActionBar">
 
-
-
         </activity>
     </application>
-
 </manifest>
