@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        android:src="@drawable/camera_flash_white"
+        android:padding="4dp"
+        android:id="@+id/open_flash"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="6dp"
+        android:visibility="visible"/>
+
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_camera"
+        android:layout_alignParentRight="true"
+        android:id="@+id/switch_camera"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:visibility="invisible"/>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/try_out_button"
+        android:text="Try"
+        android:layout_above="@+id/recent_recycler"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_rounded"
+        android:textAllCaps="false"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:visibility="invisible"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="100dp"
+       android:layout_alignParentBottom="true"
+       android:id="@+id/recent_recycler"
+       android:orientation="vertical"
+       android:background="#c2000000"
+       >
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Previously Scanned"
+           android:textAlignment="center"
+           android:textColor="@android:color/white"
+           android:padding="2dp"
+           />
+       <android.support.v7.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/recently_scanned"
+           >
+       </android.support.v7.widget.RecyclerView>
+
+
+   </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="4dp"
+    >
+
+
+    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        app:dsb_min="1"
+        app:dsb_max="5"
+        android:layout_marginTop="30dp"
+        android:id="@+id/tryout_seekbar"
+        app:dsb_thumbSize="4dp"
+        app:dsb_indicatorSeparation="0dp"
+        />
+
+    <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/imageView"
+          android:layout_centerVertical="true"
+          android:layout_centerHorizontal="true"
+          android:scaleType="centerInside"/>
+
+
+</RelativeLayout>
+
+       <android.support.v7.widget.RecyclerView
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_alignParentRight="true"
+           android:layout_above="@+id/change_camera"
+           android:layout_marginRight="8dp"
+           android:layout_marginBottom="12dp"
+           android:id="@+id/side_preview"
+           ></android.support.v7.widget.RecyclerView>
+
+      <ImageButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@android:drawable/ic_menu_camera"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentEnd="true"
+          android:layout_marginBottom="20dp"
+          android:layout_marginEnd="20dp"
+          android:background="@android:color/transparent"
+          android:id="@+id/change_camera"/>
+
+       <ImageButton
+           android:layout_width="32dp"
+           android:layout_height="32dp"
+           android:src="@drawable/ic_shopping_cart"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="20dp"
+           android:layout_marginEnd="20dp"
+           android:layout_centerHorizontal="true"
+           android:background="@android:color/transparent"
+           android:id="@+id/goto_shop"
+           android:scaleType="centerInside"/>
+
+       <View
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="20dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginLeft="20dp"
+           android:id="@+id/capture_screenshot"
+
+           android:background="@drawable/capture_screenshot_circle"/>
+   </RelativeLayout>
+
+
+</LinearLayout>
